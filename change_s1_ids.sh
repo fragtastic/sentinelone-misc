@@ -2,12 +2,8 @@
 
 set -e
 
-s1package="${1}"
 newuid=${2}
 newgid=${3}
-
-echo Installing SentinelOne Agent from ${s1package}
-dpkg -i ${s1package}
 
 autouid=`id -u sentinelone`
 autogid=`id -g sentinelone`
