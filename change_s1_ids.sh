@@ -2,8 +2,23 @@
 
 set -e
 
-newuid=${1}
-newgid=${2}
+print_usage() {
+        echo ${0} -u USER_ID -g GROUP_ID
+        exit 1
+}
+
+while getopts “u:g:” opt; do
+  case $opt in
+    u) newuid=$OPTARG ;;
+    g) newgid=$OPTARG ;;
+    *) print_usage ;;
+  esac
+done
+
+if [ -z "$newuid" ] || [ -z "$newgid" ]
+then
+      print_usage
+fi
 
 autouid=`id -u sentinelone`
 autogid=`id -g sentinelone`
