@@ -32,7 +32,6 @@ echo Changing file /opt/sentinelone/ user id
 chown -h sentinelone /opt/sentinelone
 find /opt/sentinelone/ -user ${autouid} -exec chown -h sentinelone {} \;
 
-
 echo Changing file /opt/sentinelone/ group id
 chgrp -h sentinelone /opt/sentinelone
 find /opt/sentinelone/ -group ${autogid} -exec chgrp -h sentinelone {} \;
