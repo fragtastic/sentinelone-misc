@@ -2,8 +2,8 @@
 
 set -e
 
-newuid=${2}
-newgid=${3}
+newuid=${1}
+newgid=${2}
 
 autouid=`id -u sentinelone`
 autogid=`id -g sentinelone`
